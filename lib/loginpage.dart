@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter20/Register.dart';
 //import 'package:sign_in_button/sign_in_button.dart';
 
 class Login extends StatefulWidget {
@@ -106,9 +107,12 @@ class _LoginState extends State<Login> {
               height: 10,
             ),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.greenAccent),
               onPressed: () {
-                //googleLogin();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Register()),
+                );
               },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
@@ -116,15 +120,11 @@ class _LoginState extends State<Login> {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.network(
-                      'https://th.bing.com/th/id/OIP.flV_HAhkgpxUwwDRW-5p9AHaHa?w=168&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7',
-                      height: 40,
-                      width: 30,
-                    ),
+
                     const Padding(
                       padding: EdgeInsets.only(left: 24, right: 8),
                       child: Text(
-                        'Sign in with Google',
+                        'Register',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.black,
