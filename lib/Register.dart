@@ -27,6 +27,7 @@ class _RegisterState extends State<Register> with SingleTickerProviderStateMixin
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+
         title: const Text('Register',style: TextStyle(fontWeight: FontWeight.bold),),
       ),
 

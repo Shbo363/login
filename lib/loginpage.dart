@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter20/Register.dart';
+import 'package:flutter20/homepage.dart';
 //import 'package:sign_in_button/sign_in_button.dart';
 
 class Login extends StatefulWidget {
@@ -18,10 +19,10 @@ class _LoginState extends State<Login> {
             child: Column(children: [
                 // logo
                 const SizedBox(height: 25),
-            Image.network(
-              'https://th.bing.com/th?id=OIP.NpoC0E6IqMAcQo7vUG8eNAHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',
-              width: 250,
-              height: 200,
+            Image.asset("image/bale"
+              ,
+              width: 50,
+              height: 20,
             ),
             const Text(
               'Login in',
@@ -61,13 +62,19 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-             SizedBox(height: 20,width: 60,),
+             const SizedBox(height: 20,width: 60,),
               ElevatedButton(style:ElevatedButton.styleFrom(backgroundColor:Colors.blue,  ),
-                child: Text('Sign in',style: TextStyle(color:Colors.white,fontSize: 20,fontWeight:FontWeight.bold  ),
+                child: const Text('Sign in',style: TextStyle(color:Colors.white,fontSize: 20,fontWeight:FontWeight.bold  ),
                 ),
                 onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const homepage()
 
-                },
+
+                      )
+                  );
+                  },
 
               ),
 
@@ -93,10 +100,10 @@ class _LoginState extends State<Login> {
 
 
 
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               'OR',
               style: TextStyle(
                   color: Colors.blue,
@@ -111,17 +118,20 @@ class _LoginState extends State<Login> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Register()),
+                  MaterialPageRoute(builder: (context) => const Register()
+
+                  ),
+
                 );
               },
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
 
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.only(left: 24, right: 8),
                       child: Text(
                         'Register',
