@@ -16,60 +16,222 @@ class _homepageState extends State<homepage> {
 
         ),
 
-      body:
-      ListView(
-
-        padding: const EdgeInsets.all(20),
+      body: Column(
         children: [
 
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: TextField(
 
-          myCard("image/food.jpg"),
-          myCard("image/taxi.jpg"),
-          myCard("image/sign.jpg"),
-          myCard("image/traa.jpg"),
+          decoration: InputDecoration(
+            hintText: 'Search...',
+            // Add a clear button to the search bar
+            suffixIcon: ElevatedButton(
+              style:ElevatedButton.styleFrom(backgroundColor:Colors.green,  ),
+              child: const Text('بحث',style: TextStyle(color:Colors.white,fontSize: 20,fontWeight:FontWeight.bold  ),
+              ),
+                onPressed: (){
 
-        ]
-
-    )
-
-    );
+                },
 
 
-  }
 
-  Container myCard(String image){
-    return  Container(
-      margin: const EdgeInsets.only(top: 20),
-      padding:const EdgeInsets.only(top: 30) ,
-      height: 200,
-      width: 350,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              // image: NetworkImage("https://cdn.pixabay.com/photo/2014/06/03/19/38/board-361516_640.jpg")),
-              image: AssetImage(image)
+                )
+            ),
+
+            ),
+        ),
+const Text("أكبر سوق عربي للخدمات المصغرة ",style: TextStyle(fontSize: 25, ),
+
+),
+
+const SizedBox(height: 40,),
+          Row( children: [
+            Padding(
+              padding: const EdgeInsets.all(15,),
+              child: Container(
+               width: 160,
+                height: 100,
+                child: const Center(child: Text('البرمجة والتطوير',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Colors.white),)),
+decoration:const BoxDecoration(
+  image:DecorationImage(image:AssetImage("image/download.jpg"),
+    fit: BoxFit.fill,
+
+
+
+  )
+
+
+
+
+) ,
+     ),
+
+            ),
+
+          Container(
+
+          width: 160,
+            height: 100,
+            child: const Center(child: Text('الكتابة والترجمة',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Colors.white),)),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                    "image/write.png"),
+                fit: BoxFit.fill,
+              ),
+
+            ),
+
           ),
 
-          color: Colors.blue,
-          // borderRadius: BorderRadius.circular(20),
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(50),
-            bottomRight: Radius.circular(50),
-            topRight: Radius.circular(50),
-          ),
-          border: Border.all(width: 1, color: Colors.grey),
-          boxShadow: [
-            const BoxShadow(
-                blurRadius: 5,
-                spreadRadius: 1,
-                color: Colors.blueAccent,
-                offset: Offset(2, 6)),
-          ]),
-        child:  const Column(
-          children: [
 
           ],
-        ),
+
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: Row( children: [
+              Container(
+
+                width: 160,
+                height: 100,
+                child: const Center(child: Text('التسويق الرقمي',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Colors.white),)),
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "image/digit.png"),
+                    fit: BoxFit.fill,
+                  ),
+
+                ),
+
+
+
+
+
+
+
+              ),
+              const SizedBox(width: 15,),
+              Container(
+
+                width: 160,
+                height: 100,
+                child: const Center(child: Text('الأعمال',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Colors.white),)),
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "image/buss.png"),
+                    fit: BoxFit.fill,
+                  ),
+
+                ),
+
+
+
+
+
+              ),
+
+            ],
+            ),
+          ),
+          Row( children: [
+            Padding(
+              padding: const EdgeInsets.all(15,),
+              child: Container(
+                width: 160,
+                height: 100,
+                child: const Center(child: Text('الصوتيات',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Colors.white),)),
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "image/voice.png"),
+                    fit: BoxFit.fill,
+                  ),
+
+                ),
+
+
+
+              ),
+
+            ),
+Stack(
+           children:[ Container(
+
+              width: 160,
+              height: 100,
+
+
+              child: const Center(child: Text('الذكاء الاصطناعي',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Colors.white),)),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      "image/Ai.png"),
+                  fit: BoxFit.fill,
+                ),
+
+              ),
+
+
+
+
+            )
+              ]
+            ),
+
+
+          ],
+
+          ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ],
+
+      )
+
+
+
+
+
+
+
+
     );
+
+
   }
-}
+
+
+  }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter20/Balyhome.dart';
 import 'package:flutter20/Register.dart';
 import 'package:flutter20/homepage.dart';
 
@@ -32,9 +33,12 @@ class _bnbState extends State<bnb> {
     return  Scaffold(
         appBar: AppBar(
         backgroundColor: Colors.white,
-         title:  Image.asset("image/bale.jpg",height: 100,width: 330,),
-
+         title:
+             Image.asset("image/kham.png",height: 60,width: 330,),
     ),
+
+
+
 
     body:
 
@@ -47,28 +51,61 @@ class _bnbState extends State<bnb> {
     // backgroundColor: Colors.blue,
     // fixedColor: Colors.blue,
     // unselectedItemColor: Colors.deepOrangeAccent,
-    items: const <BottomNavigationBarItem>[
-    BottomNavigationBarItem(
-    icon: Icon(Icons.home),
+    items: <BottomNavigationBarItem>[
+    const BottomNavigationBarItem(
+    icon: Icon(Icons.home,color: Colors.green,),
     label: 'الرئيسية',
     ),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
     icon: Icon(
-    Icons.shopping_basket_sharp,
+    Icons.search,
     color: Colors.green,
     ),
-    label: 'السلة',
+    label: 'أبحث',
     ),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
     icon: Icon(
     Icons.person,
     color: Colors.green,
     ),
     label: 'الحساب',
     ),
+      BottomNavigationBarItem(
+        icon: IconButton( onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const balyhome()),
+          );
+
+
+
+            },
+            icon: Icon( Icons.shopping_basket,color: Colors.green,)
+
+    ),
+            label:'السلة',
+
+    ),
+       BottomNavigationBarItem(
+        icon: Icon(
+          Icons.menu,
+          color: Colors.green,
+        ),
+        label: 'القائمة',
+      ),
+
+
+
+
+
+
+
+
     ],
+    selectedLabelStyle: TextStyle(color: Colors.green,fontWeight: FontWeight.bold,fontSize: 15),
     currentIndex: _selectedIndex,
     onTap: _onItemTapped,
+      selectedItemColor: Colors.black,
     ),
 
 
