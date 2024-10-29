@@ -56,7 +56,7 @@ const SizedBox(height: 40,),
 decoration:const BoxDecoration(
   image:DecorationImage(image:AssetImage("image/download.jpg"),
     fit: BoxFit.fill,
-
+colorFilter: ColorFilter.mode(Colors.black, BlendMode.saturation,),
 
 
   )
