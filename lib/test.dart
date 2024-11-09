@@ -1,133 +1,65 @@
 
+import 'package:get/get.dart';
 
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter20/Apiw.dart';
 
-class TestPage extends StatelessWidget {
-   TestPage({super.key});
-   Mug mug = Mug();
+import 'controller.dart';
+
+class ApiDemo extends StatelessWidget {
+  // Instantiate the controller
+  final ApiController apiController = Get.put(ApiController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar (backgroundColor:Colors.blueAccent ,title:const Center(child: Text('المقالات',style: TextStyle(color: Colors.white,fontSize: 40),)) ,),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blueAccent,
-        onPressed: (){
-          mug.post("fasdfasdf", {
-            "title":"hello world",
-          });
-        },
-        child: const Icon(Icons.add, color: Colors.white, size: 28),
-
+      appBar: AppBar(
+        title: Text('API Demo with GetX'),
       ),
-      body: Column(
-        children: [
-         const  SizedBox(height: 100,),
-          Stack(
-            children: [
-              Center(child: Image.asset("image/Ai.png")),
-              Positioned(
-                right: 70,
-                child: IconButton(
-                    onPressed: (){
-                      mug.delete("https//mustfa.com/pageDelete.php", {
-                        "id":1
-                      });
-                    }, 
-                    icon: const Icon(Icons.delete,
-                      size: 36,
-                      color: Colors.white,
-                    ),
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // TextField to input text
+            TextField(
+              onChanged: (text) => apiController.inputText.value = text,
+              decoration: InputDecoration(
+                labelText: 'Enter text for POST/PUT',
+                border: OutlineInputBorder(),
               ),
-            ],
-          ),
-          const SizedBox(height: 10,),
-          const Text('أهمية الذكاء الأصطناعي',style: TextStyle(fontSize: 30),),
-const SizedBox(height: 50,),
-
-          ElevatedButton.icon(style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),),
-            icon: const Icon(
-              Icons.more,
-              color: Colors.white,
-              size: 24.0,
             ),
-            label: const Text('اقرا المزيد',style: TextStyle(fontSize: 30,color: Colors.white),),
-            onPressed: () {
-            mug.get("https//mustfa.com/pageDelete.php");
+            SizedBox(height: 20),
 
-
-            },
-          ),
-SizedBox(height: 15,),
-          ElevatedButton.icon(style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),),
-            icon: const Icon(
-              Icons.edit,
-              color: Colors.white,
-              size: 24.0,
+            // Elevated Buttons for each API Method
+            ElevatedButton(
+              onPressed: () => apiController.getApi(),
+              child: Text('GET API'),
             ),
-            label: const Text('تعديل المقالات',style: TextStyle(fontSize: 30,color: Colors.white),),
-            onPressed: () {
-            mug.updateResource("https//mustfa.com/pageDelete.php",Map());
+            ElevatedButton(
+              onPressed: () => apiController.postApi(),
+              child: Text('POST API'),
+            ),
+            ElevatedButton(
+              onPressed: () => apiController.putApi(),
+              child: Text('PUT API'),
+            ),
+            ElevatedButton(
+              onPressed: () => apiController.deleteApi(),
+              child: Text('DELETE API'),
+            ),
+            SizedBox(height: 20),
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            },
-          )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        ],
+            // Obx widget to reactively display the input text
+            Obx(() {
+              return Text('API Response: ${apiController.responseText.value}',
+                  style: TextStyle(fontSize: 18));
+            }),
+          ],
+        ),
       ),
     );
   }
 }
+
