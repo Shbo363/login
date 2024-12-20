@@ -30,7 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
- #sign_in_button: ^3.2.0
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.16
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -40,6 +42,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   http: ^1.2.2
+  get: ^4.6.6
+  flutter_native_splash: ^2.4.2
+  flutter_launcher_icons: ^0.14.1
+
+flutter_native_splash:
+  image: image/aon1.jpg
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
